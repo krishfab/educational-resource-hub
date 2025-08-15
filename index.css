@@ -1,0 +1,160 @@
+/* Reset & Base */
+body {
+  margin: 0;
+  background-color: #e5fbff;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgba(29, 27, 52, 0.85); /* glassy feel */
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s ease;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 1.2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e67cb4 !important;
+}
+
+/* Section: Home */
+#home {
+  background: url(./images/home.jpg) center/cover no-repeat;
+  height: 950px;
+  display: flex;
+  align-items: center;
+  padding: 400px 0 0 50px;
+  color: white !important;
+}
+
+#home-header {
+  font-size: 80px !important;
+}
+
+.lead {
+  font-size: 30px;
+}
+
+/* Section: Introduction */
+#introduction {
+  background: url(./images/introduction.jpg) center/cover no-repeat;
+  height: 1000px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 400px;
+  color: white;
+}
+
+.header-i {
+  font-size: 70px;
+  color: #e67cb4 !important;
+}
+
+.intro-par {
+  font-size: 20px;
+  max-width: 800px;
+}
+
+.intro-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.intro-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Section: Featured */
+.featured-container {
+  padding: 100px;
+  background-color: #e5fbff;
+}
+
+.feature-header {
+  color: #280f91 !important;
+  font-size: 50px;
+}
+
+/* Cards */
+.card {
+  margin-top: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #280f91;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+/* Categories */
+.category-heading {
+  color: #e67cb4!important;
+}
+
+.card-cat {
+    margin-top: 50px;
+  border-radius: 12px;
+  background-color: #280f91 !important;
+  color: #280f91;
+  font-size: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card-cat img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-cat:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Custom category colors */
+.card-cat:nth-child(1) { background-color: #e0f7fa !important; }
+.card-cat:nth-child(2) { background-color: #f3e5f5 !important; }
+.card-cat:nth-child(3) { background-color: #fff3e0 !important; }
+
+/* About Section */
+#about {
+  background: url(./images/about.jpg) center/cover no-repeat;
+  height: 900px;
+  color: white;
+}
+
+.about-header {
+  font-size: 50px;
+  padding-top: 300px;
+}
+
+/* Mission Section */
+#mission {
+  background: url(./images/mission.jpg) center/cover no-repeat;
+  height: 1000px;
+}
