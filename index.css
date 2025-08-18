@@ -71,10 +71,11 @@ nav a:hover {
 #introduction {
   background: url(./images/introduction.jpg) center/cover no-repeat;
   height: 1000px;
-  display: flex;
-  align-items: flex-start;
+  justify-content: center;  
+  align-items: center;       
   padding-top: 400px;
   color: white;
+  text-align: center;
 }
 
 .header-i {
@@ -82,11 +83,10 @@ nav a:hover {
   color: #e67cb4 !important;
   font-family: 'Merriweather', serif;
   font-weight: 800;
+  padding-top: 150px;
 }
 
 .intro-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 50px;
@@ -94,7 +94,6 @@ nav a:hover {
 
 .intro-par {
   font-size: 20px;
-  max-width: 800px;
 }
 
 .intro-section {
@@ -153,6 +152,27 @@ nav a:hover {
 .card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: #e67cb4; 
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
+  text-shadow: 
+    0 0 6px #e67cb4, 
+    0 0 12px #e67cb4, 
+    0 0 20px rgba(230, 124, 180, 0.8),
+    0 0 28px rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+
+
+.card-title:hover {
+  text-shadow: 
+    0 0 8px #e67cb4, 
+    0 0 16px #e67cb4, 
+    0 0 32px rgba(230, 124, 180, 0.9),
+    0 0 48px rgba(255, 255, 255, 0.6);
 }
 
 /* ============================= */
