@@ -4,9 +4,10 @@
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
-   max-width: 100%;
+  max-width: 100%;
   overflow-x: hidden; 
   background-color: #e5fbff;
+  scroll-behavior: smooth;
 }
 
 /* ============================= */
@@ -17,11 +18,16 @@ nav {
   top: 0;
   width: 100%;
   padding: 1rem;
-  background-color: rgba(29, 27, 52, 0.85); /* glassy feel */
+  background-color: rgba(29, 27, 52, 0.85);
   backdrop-filter: blur(8px);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   font-family: 'Merriweather', serif;
   font-weight: 800;
+  z-index: 999;
+}
+
+nav:hover {
+  transform: scale(1.01);
 }
 
 nav ul {
@@ -33,15 +39,31 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #e67cb4 !important;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-size: 1.2rem;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #e67cb4;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
-  background-color: #e67cb4; /* pink background */
-  color: white !important;   /* white text */
+  background-color: #e67cb4;
+  color: #fff !important;
 }
 
 /* ============================= */
@@ -54,15 +76,26 @@ nav a:hover {
   align-items: center;
   padding: 400px 0 0 50px;
   color: white !important;
+  position: relative;
 }
 
 #home-header {
   font-size: 75px !important;
   font-family: 'Merriweather', serif;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 8px #e67cb4, 0 0 12px rgba(255,255,255,0.6);
+  transition: transform 0.4s ease;
+}
+
+#home-header:hover {
+  transform: scale(1.05);
 }
 
 .lead {
   font-size: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 /* ============================= */
@@ -76,7 +109,9 @@ nav a:hover {
   padding-top: 400px;
   color: white;
   text-align: center;
+  position: relative;
 }
+
 
 .header-i {
   font-size: 60px;
@@ -84,6 +119,12 @@ nav a:hover {
   font-family: 'Merriweather', serif;
   font-weight: 800;
   padding-top: 150px;
+  text-shadow: 0 0 8px #e67cb4, 0 0 12px rgba(255,255,255,0.5);
+  transition: transform 0.3s ease;
+}
+
+.header-i:hover {
+  transform: translateY(-5px);
 }
 
 .intro-container {
@@ -94,17 +135,9 @@ nav a:hover {
 
 .intro-par {
   font-size: 20px;
-}
-
-.intro-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.intro-section.show {
-  opacity: 1;
-  transform: translateY(0);
+  line-height: 1.6;
+  max-width: 900px;
+  margin: auto;
 }
 
 /* ============================= */
@@ -122,6 +155,8 @@ nav a:hover {
   font-size: 50px;
   color: #e67cb4 !important;
   font-family: 'Merriweather', serif;
+  text-align: center;
+  text-shadow: 0 0 6px #e67cb4, 0 0 12px rgba(230,124,180,0.5);
 }
 
 /* ============================= */
@@ -131,7 +166,7 @@ nav a:hover {
     flex: 1 1 300px; 
     flex-direction: column;
     justify-content: space-between;
-    in-height: 550px; 
+    min-height: 550px; 
     max-width: 400px;  
     margin-top: 40px;
     background-color: #280f91;
@@ -139,19 +174,25 @@ nav a:hover {
     border-radius: 10px;
     text-align: center;
     padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+}
 
 .card img {
   width: 100%;
-  height: 500px;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform 0.4s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+  transform: scale(1.05);
 }
 
 .card-title {
@@ -165,7 +206,6 @@ nav a:hover {
     0 0 28px rgba(255, 255, 255, 0.5);
   transition: text-shadow 0.3s ease;
 }
-
 
 .card-title:hover {
   text-shadow: 
@@ -183,6 +223,7 @@ nav a:hover {
   color: #e67cb4 !important;
   font-family: 'Merriweather', serif;
   padding-top: 35px;
+  text-align: center;
 }
 
 #categories-section {
@@ -193,21 +234,26 @@ nav a:hover {
 .card-cat {
   margin-top: 50px;
   border-radius: 12px;
-  background-color: #280f91 !important;
-  color: #280f91;
   font-size: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  cursor: pointer;
 }
 
 .card-cat img {
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
 .card-cat:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-cat:hover img {
+  transform: scale(1.05);
 }
 
 .card-cat:nth-child(1) { background-color: #e0f7fa !important; }
@@ -221,6 +267,7 @@ nav a:hover {
   background: url(./images/about.jpg) center/cover no-repeat;
   height: 600px;
   color: white;
+  position: relative;
 }
 
 .about-header {
@@ -229,30 +276,58 @@ nav a:hover {
   font-family: 'Merriweather', serif;
   color: #e67cb4 !important;
   font-weight: 800;
+  text-shadow: 0 0 6px #e67cb4, 0 0 12px rgba(255,255,255,0.5);
 }
 
 .about-par {
   font-size: 20px;
   max-width: 700px;                
   line-height: 1.6;
-  color: #white;
+  color: #fff;
 }
-/* ============================= */
-/* Resources Section */
-/* ============================= */
 
+/* ============================= */
+/* Resources Section - Polished */
+/* ============================= */
 .resources-header {
   font-size: 50px;
   color: #e67cb4 !important;
   font-family: 'Merriweather', serif;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 4px rgba(230,124,180,0.6); /* subtle glow */
 }
 
 #resources {
-  padding: 50px;
+  padding: 50px 20px; /* better responsive padding */
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: center;
+}
+
+.card-res {
+  background: linear-gradient(135deg, #fff, #f3e5f5);
+  color: #280f91;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-res:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+#resources .btn {
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#resources .btn:hover {
+  transform: scale(1.05);
+  background-color: #e67cb4;
+  color: #fff !important;
+  box-shadow: 0 6px 15px rgba(230,124,180,0.3);
 }
 
 /* ============================= */
@@ -264,10 +339,11 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 100px 40px; 
+  padding: 100px 40px;
   color: white;
-  text-align: left; 
+  position: relative;
 }
+
 
 .mission-header {
   font-size: 50px;               
@@ -275,6 +351,7 @@ nav a:hover {
   font-weight: 800;
   color: #e67cb4 !important;       
   margin-bottom: 20px;
+  text-shadow: 0 0 8px #e67cb4, 0 0 12px rgba(255,255,255,0.5);
 }
 
 .mission-par {
@@ -299,6 +376,7 @@ nav a:hover {
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 800;
+  text-shadow: 0 0 8px #e67cb4;
 }
 
 #contact p {
@@ -316,6 +394,19 @@ nav a:hover {
   color: white;
 }
 
+/* ============================= */
+/* Scroll Animation Utility */
+/* ============================= */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ============================= */
 /* Mobile Responsiveness */
@@ -365,10 +456,7 @@ nav a:hover {
     height: 200px !important; 
     object-fit: cover;
   }
-}
 
-
-@media (max-width: 768px) {
   #home {
     background: none !important;
     background-color: #280f91 !important;
@@ -378,61 +466,4 @@ nav a:hover {
     text-align: center;
     margin: 0 !important;
   }
-
-
-@media (min-width: 1024px) {
-  #introduction {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  
-    align-items: center;      
-    text-align: center;
-    padding-top: 0;           
-    height: 100vh;         
-  }
-}}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  #home,
-  #introduction {
-    background-position: center top;  
-    background-size: cover;          
-    height: 800px;                    
-    padding: 150px 20px;             
-  }
-  .header-i{
-    padding-top: 280px !important;                 
-    height: auto;                  
-  }
-
-  .intro-container {
-    padding: 30px 20px;
-  }
-
-  .card img {
-    height: 300px !important; 
-  }
-
-   #about,
-  #mission{
-    height: 400px; 
-  }
-
-  .about-header{
-    padding-top: 50px;
-  }
-}
-
-/* ============================= */
-/* Scroll Animation Utility */
-/* ============================= */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.scroll-reveal.show {
-  opacity: 1;
-  transform: translateY(0);
 }
