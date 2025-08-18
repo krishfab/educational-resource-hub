@@ -1,11 +1,17 @@
+/* ============================= */
 /* Reset & Base */
+/* ============================= */
 body {
   margin: 0;
+  font-family: 'Lato', sans-serif;
+   max-width: 100%;
+  overflow-x: hidden; 
   background-color: #e5fbff;
-  font-family: Arial, sans-serif;
 }
 
+/* ============================= */
 /* Navbar */
+/* ============================= */
 nav {
   position: absolute;
   top: 0;
@@ -14,11 +20,8 @@ nav {
   background-color: rgba(29, 27, 52, 0.85); /* glassy feel */
   backdrop-filter: blur(8px);
   transition: background-color 0.3s ease;
-}
-
-.nav-link {
-  color: white !important;
-  font-size: 1.2rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
 }
 
 nav ul {
@@ -30,9 +33,20 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #e67cb4 !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
 }
 
+nav a:hover {
+  background-color: #e67cb4; /* pink background */
+  color: white !important;   /* white text */
+}
+
+/* ============================= */
 /* Section: Home */
+/* ============================= */
 #home {
   background: url(./images/home.jpg) center/cover no-repeat;
   height: 950px;
@@ -43,14 +57,17 @@ nav a {
 }
 
 #home-header {
-  font-size: 80px !important;
+  font-size: 75px !important;
+  font-family: 'Merriweather', serif;
 }
 
 .lead {
   font-size: 30px;
 }
 
+/* ============================= */
 /* Section: Introduction */
+/* ============================= */
 #introduction {
   background: url(./images/introduction.jpg) center/cover no-repeat;
   height: 1000px;
@@ -61,8 +78,18 @@ nav a {
 }
 
 .header-i {
-  font-size: 70px;
+  font-size: 60px;
   color: #e67cb4 !important;
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
 }
 
 .intro-par {
@@ -80,44 +107,65 @@ nav a {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================= */
 /* Section: Featured */
+/* ============================= */
 .featured-container {
   padding: 100px;
   background-color: #e5fbff;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .feature-header {
-  color: #280f91 !important;
   font-size: 50px;
+  color: #e67cb4 !important;
+  font-family: 'Merriweather', serif;
 }
 
+/* ============================= */
 /* Cards */
+/* ============================= */
 .card {
-  margin-top: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #280f91;
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-}
+    flex: 1 1 300px; 
+    flex-direction: column;
+    justify-content: space-between;
+    in-height: 550px; 
+    max-width: 400px;  
+    margin-top: 40px;
+    background-color: #280f91;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
 .card img {
-  height: 400px;
+  width: 100%;
+  height: 500px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* ============================= */
 /* Categories */
+/* ============================= */
 .category-heading {
-  color: #e67cb4!important;
+  font-size: 50px;
+  color: #e67cb4 !important;
+  font-family: 'Merriweather', serif;
 }
 
 .card-cat {
-    margin-top: 50px;
+  margin-top: 50px;
   border-radius: 12px;
   background-color: #280f91 !important;
   color: #280f91;
@@ -133,28 +181,218 @@ nav a {
 
 .card-cat:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Custom category colors */
 .card-cat:nth-child(1) { background-color: #e0f7fa !important; }
 .card-cat:nth-child(2) { background-color: #f3e5f5 !important; }
 .card-cat:nth-child(3) { background-color: #fff3e0 !important; }
 
+/* ============================= */
 /* About Section */
+/* ============================= */
 #about {
   background: url(./images/about.jpg) center/cover no-repeat;
-  height: 900px;
+  height: 600px;
   color: white;
 }
 
 .about-header {
   font-size: 50px;
-  padding-top: 300px;
+  padding-top: 200px;
+  font-family: 'Merriweather', serif;
+  color: #e67cb4 !important;
+  font-weight: 800;
+}
+/* ============================= */
+/* Resources Section */
+/* ============================= */
+
+.resources-header {
+  font-size: 50px;
+  color: #e67cb4 !important;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 20px;
 }
 
+/* ============================= */
 /* Mission Section */
+/* ============================= */
 #mission {
   background: url(./images/mission.jpg) center/cover no-repeat;
-  height: 1000px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ✅ content stays left */
+  padding: 100px 40px; /* ✅ spacing on left side */
+  color: white;
+  text-align: left; 
+}
+
+.mission-header {
+  font-size: 50px;                 /* ✅ same as about */
+  font-family: 'Merriweather', serif;
+  font-weight: 800;
+  color: #e67cb4 !important;       /* ✅ same pink accent */
+  margin-bottom: 20px;
+}
+
+.mission-par {
+  font-size: 20px;
+  max-width: 700px;                /* ✅ readable text width */
+  line-height: 1.6;
+  color: #280f91;
+}
+
+/* ============================= */
+/* Contact Section */
+/* ============================= */
+#contact {
+  background-color: #1d1b34; /* ✅ dark background for contrast */
+  padding: 80px 20px;
+  text-align: center;
+  color: #e67cb4 !important; /* ✅ pink font */
+  font-family: 'Merriweather', serif;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+#contact a {
+  color: #e67cb4;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: white; /* ✅ nice hover effect */
+}
+
+
+/* ============================= */
+/* Mobile Responsiveness */
+/* ============================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #home-header {
+    font-size: 2.8rem !important; 
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .lead {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  .header-i {
+    padding-top: 100px !important;
+    font-size: 2.5rem;
+  }
+
+  .intro-par {
+    font-size: 1rem;
+  }
+
+  .feature-header {
+    font-size: 2rem;
+  }
+
+  .about-header {
+    font-size: 2rem;
+  }
+
+   .card {
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .card img {
+    height: 200px !important; 
+    object-fit: cover;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #home {
+    background: none !important;
+    background-color: #280f91 !important;
+    width: 100% !important;
+    min-height: 100vh;
+    padding: 200px 20px 0 20px;
+    text-align: center;
+    margin: 0 !important;
+  }
+
+
+@media (min-width: 1024px) {
+  #introduction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;
+    padding-top: 0;           
+    height: 100vh;         
+  }
+}}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #home,
+  #introduction {
+    background-position: center top;  /* better crop for tablets */
+    background-size: cover;          /* keeps ratio */
+    height: 800px;                    /* allow height to adapt */
+    padding: 150px 20px;             /* adjust spacing */
+  }
+  .header-i{
+    padding-top: 280px !important;                  /* remove top padding */
+    height: auto;                    /* allow height to adapt */
+  }
+
+  .intro-container {
+    padding: 30px 20px;
+  }
+
+  .card img {
+    height: 300px !important; /* keep reasonable img size on tablet */
+  }
+
+   #about,
+  #mission{
+    height: 400px; 
+  }
+
+  .about-header{
+    padding-top: 50px;
+  }
+}
+
+/* ============================= */
+/* Scroll Animation Utility */
+/* ============================= */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
