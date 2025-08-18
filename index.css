@@ -182,6 +182,12 @@ nav a:hover {
   font-size: 50px;
   color: #e67cb4 !important;
   font-family: 'Merriweather', serif;
+  padding-top: 35px;
+}
+
+#categories-section {
+  background-color: #280f91;
+  padding: 30px;
 }
 
 .card-cat {
@@ -219,10 +225,17 @@ nav a:hover {
 
 .about-header {
   font-size: 50px;
-  padding-top: 200px;
+  padding-top: 180px;
   font-family: 'Merriweather', serif;
   color: #e67cb4 !important;
   font-weight: 800;
+}
+
+.about-par {
+  font-size: 20px;
+  max-width: 700px;                
+  line-height: 1.6;
+  color: #white;
 }
 /* ============================= */
 /* Resources Section */
@@ -232,7 +245,14 @@ nav a:hover {
   font-size: 50px;
   color: #e67cb4 !important;
   font-family: 'Merriweather', serif;
-  margin-bottom: 20px;
+}
+
+#resources {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 /* ============================= */
@@ -243,23 +263,23 @@ nav a:hover {
   height: 600px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ✅ content stays left */
-  padding: 100px 40px; /* ✅ spacing on left side */
+  justify-content: flex-start;
+  padding: 100px 40px; 
   color: white;
   text-align: left; 
 }
 
 .mission-header {
-  font-size: 50px;                 /* ✅ same as about */
+  font-size: 50px;               
   font-family: 'Merriweather', serif;
   font-weight: 800;
-  color: #e67cb4 !important;       /* ✅ same pink accent */
+  color: #e67cb4 !important;       
   margin-bottom: 20px;
 }
 
 .mission-par {
   font-size: 20px;
-  max-width: 700px;                /* ✅ readable text width */
+  max-width: 700px;                
   line-height: 1.6;
   color: #280f91;
 }
@@ -268,10 +288,10 @@ nav a:hover {
 /* Contact Section */
 /* ============================= */
 #contact {
-  background-color: #1d1b34; /* ✅ dark background for contrast */
+  background-color: #1d1b34; 
   padding: 80px 20px;
   text-align: center;
-  color: #e67cb4 !important; /* ✅ pink font */
+  color: #e67cb4 !important; 
   font-family: 'Merriweather', serif;
 }
 
@@ -293,7 +313,7 @@ nav a:hover {
 }
 
 #contact a:hover {
-  color: white; /* ✅ nice hover effect */
+  color: white;
 }
 
 
@@ -375,14 +395,14 @@ nav a:hover {
 @media (min-width: 768px) and (max-width: 1024px) {
   #home,
   #introduction {
-    background-position: center top;  /* better crop for tablets */
-    background-size: cover;          /* keeps ratio */
-    height: 800px;                    /* allow height to adapt */
-    padding: 150px 20px;             /* adjust spacing */
+    background-position: center top;  
+    background-size: cover;          
+    height: 800px;                    
+    padding: 150px 20px;             
   }
   .header-i{
-    padding-top: 280px !important;                  /* remove top padding */
-    height: auto;                    /* allow height to adapt */
+    padding-top: 280px !important;                 
+    height: auto;                  
   }
 
   .intro-container {
@@ -390,7 +410,7 @@ nav a:hover {
   }
 
   .card img {
-    height: 300px !important; /* keep reasonable img size on tablet */
+    height: 300px !important; 
   }
 
    #about,
